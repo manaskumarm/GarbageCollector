@@ -8,7 +8,7 @@ Garbage collection(GC) in .NET is a memory management technique that automatical
 When an object is created in a .NET application, memory is allocated from the managed heap to store that object.
 
 2. **Generation-Based Approach**:
-The managed heap is divided into three generations: Generation 0, Generation 1, and Generation 2. Objects that survive garbage collections are promoted to higher generations.
+GC employs a generational approach with marking and sweeping to efficiently manage memory. The managed heap is divided into three generations: Generation 0, Generation 1, and Generation 2. Objects that survive garbage collections are promoted to higher generations.
 
     Generation 0: This is the youngest generation and contains short-lived objects. An example of a short-lived object is a temporary variable. Garbage collection occurs most frequently in this generation.
     Most objects are reclaimed for garbage collection in Gen 0 and do not survive to the next generation. Objects that survive a Gen 0 garbage collection are promoted to Gen 1.
