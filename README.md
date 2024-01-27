@@ -1,0 +1,1 @@
+Garbage collection in .NET is a memory management technique that automatically deallocates memory occupied by objects that are no longer in use, preventing memory leaks and improving system efficiency
