@@ -30,7 +30,9 @@ Objects that have a finalizer (a method that runs before an object is garbage co
 8. **Reclaimation**:
 After all the previous stages, memory is reclaimed and ready for new object allocations.
 
-**IDisposable pattern**
+The CLR provides support for automatic memory management. Managed memory (memory allocated using the C# operator new) does not need to be explicitly released. It is released automatically by the garbage collector (GC). It primarily deals with managed resources (memory occupied by managed objects) and works automatically in the background. In order to release of unmanaged resources **Disposable** plays vital role.
+
+**Disposable pattern**
 
 The IDisposable pattern in C# is a design pattern used for resource management, specifically to release unmanaged resources such as file handles, database connections, or network connections. It is crucial for cleaning up resources explicitly, rather than relying solely on the garbage collector. The pattern revolves around the IDisposable interface and the Dispose method.
 ```
@@ -80,3 +82,5 @@ public class MyDisposableClass : IDisposable
   The finalizer (~MyDisposableClass) ensures that resources are released if Dispose is not called explicitly.
   
   The GC.SuppressFinalize(this) call informs the garbage collector that the finalizer doesn't need to be executed, as resource cleanup has already been performed.
+
+  By combining the automatic memory management of the Garbage Collector with the explicit resource cleanup of the Disposable pattern, developers can ensure efficient and comprehensive management of both managed and unmanaged resources in .NET applications
